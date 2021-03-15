@@ -1,0 +1,7 @@
+[
+  {
+    "Description": "Windows 10 Base Install",
+    "Format": "vhd",
+    "UserBucket": { "S3Bucket": "BUCKET_NAME_HERE", "S3Key": "FILENAME_HERE.vhd" }
+  }
+]

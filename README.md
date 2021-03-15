@@ -16,8 +16,8 @@ Check out a video version of this guide at: VIDEO COMING SOON
 **[Create an AWS Role](#create-an-aws-role)**<br>
 **[Create an AMI](#create-an-ami)**<br>
 **[Run an Instance](#run-an-instance)**<br>
-**[Optional: Enable ENA](#optional:-enable-ena)**<br>
-**[Optional: Install Nvidia Drivers](#optional:-install-nvidia-drivers)**<br>
+**[Optional: Enable ENA](#optional-enable-ena)**<br>
+**[Optional: Install Nvidia Drivers](#optional-install-nvidia-drivers)**<br>
 
 
 ## Aims

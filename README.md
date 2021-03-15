@@ -34,17 +34,17 @@ You will need:
 
 1. Use VirtualBox or some other virtualisation software to create a new virtual machine. Make sure the disk image is at least **20GiB** in size and that you choose a **vhd** format for the disk.
 
-![VHD](https://github.com/keithvassallomt/windows10-ec2/raw/master/images/vhd.png)
+![VHD](https://raw.githubusercontent.com/keithvassallomt/windows10-ec2/main/images/vhd.png)
 
 2. Install Windows on the VM. I would recommend you create a local user and not to login with your Microsoft account. Also, now would be a good time to run Windows Update and install any available updates. 
 
 3. Once the updates are installed, click go to **Start** > **Allow remote connections to this computer**. From here, click **Show settings** next to **Change settings to allow remote connections to this computer**. 
 
-![Allowing Remote](https://github.com/keithvassallomt/windows10-ec2/raw/master/images/allow.png)
+![Allowing Remote](https://raw.githubusercontent.com/keithvassallomt/windows10-ec2/main/images/allow.png)
 
 4. Select the **Allow remote connections to this computer** item, and disable the Network Level Authentication checkbox right under it. 
 
-![Allowing Remote 2](https://github.com/keithvassallomt/windows10-ec2/raw/master/images/allow2.png)
+![Allowing Remote 2](https://raw.githubusercontent.com/keithvassallomt/windows10-ec2/main/images/allow2.png)
 
 5. Install [EC2Launch v2](https://s3.amazonaws.com/amazon-ec2launch-v2/windows/amd64/latest/AmazonEC2Launch.msi) on the VM.
 

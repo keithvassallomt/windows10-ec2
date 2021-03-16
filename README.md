@@ -77,13 +77,13 @@ cd /path/to/vhd/location
 aws s3 cp FILENAME_HERE.vhd s3://BUCKET_NAME_HERE --region eu-central-1
 ```
 
-6. Grab the file [trust-policy.json]() and place it in the same folder. Now we'll create a role called **vmimport** and apply this policy to it:
+6. Grab the file [trust-policy.json](https://raw.githubusercontent.com/keithvassallomt/windows10-ec2/main/trust-policy.json) and place it in the same folder. Now we'll create a role called **vmimport** and apply this policy to it:
 
 ```bash
 aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json
 ```
 
-7. Grab the file [role-policy.json](). Replace **BUCKET_NAME_HERE** with the name of your bucket - there are **two** replacements to be made. We'll add this policy to the role:
+7. Grab the file [role-policy.json](https://raw.githubusercontent.com/keithvassallomt/windows10-ec2/main/role-policy.json). Replace **BUCKET_NAME_HERE** with the name of your bucket - there are **two** replacements to be made. We'll add this policy to the role:
 
 ```bash
 aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json
@@ -91,7 +91,7 @@ aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-doc
 
 ## Create an AMI
 
-1. Grab the file [containers.json](). Replace **BUCKET_NAME_HERE** and **FILENAME_HERE** with the name of your S3 bucket and VHD filename respectively. 
+1. Grab the file [containers.json](https://raw.githubusercontent.com/keithvassallomt/windows10-ec2/main/containers.json). Replace **BUCKET_NAME_HERE** and **FILENAME_HERE** with the name of your S3 bucket and VHD filename respectively. 
 
 2. Create the AMI
 

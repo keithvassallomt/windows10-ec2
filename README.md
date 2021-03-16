@@ -48,6 +48,8 @@ You will need:
 
 5. Install [EC2Launch v2](https://s3.amazonaws.com/amazon-ec2launch-v2/windows/amd64/latest/AmazonEC2Launch.msi) on the VM.
 
+6. If you want, you can set a password for the Administrator user to make things easier down the line, although this is not strictly required.
+
 6. Restart and exit the VM.
 
 ## Create an AWS Role
@@ -111,9 +113,13 @@ aws ec2 describe-import-image-tasks --region eu-central-1
 
 2. Select your image, and click **Actions** > **Launch**. You should be able to choose a variety of instance types, but some instance types will not be available due to them requiring Elastic Network Adapter (ENA) support. If you need that (such as to use a g4 instance for gaming, we'll be setting that up below).
 
-3. Configure your instance as desired. 
+3. If you didn't set a password for the Administrator user, you'll need to modify the .rdp file. Simply open it in a text editor, and change the last line username from **Administrator** to whatever username you used.
 
-4. Once the instance is created, go to **Instances**, choose the instance and click **Connect**. From there, download the RDP file and you're good to go. 
+![RDP Username](https://raw.githubusercontent.com/keithvassallomt/windows10-ec2/main/images/rdpuser.png)
+
+4. Configure your instance as desired. 
+
+5. Once the instance is created, go to **Instances**, choose the instance and click **Connect**. From there, download the RDP file and you're good to go. 
 
 # Optional: Enable ENA
 
@@ -125,19 +131,19 @@ If you want to run a latest-generation instance, you need to enable ENA (Elastic
 Install-Module -Name AWSPowerShell.NetCore
 ```
 
-2. Create a profile called **default** containing your access key:
+2. Enable running unsigned scripts by typing the following in PowerShell:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+```
+
+3. Create a profile called **default** containing your access key:
 
 ```powershell
 Set-AWSCredential `
                  -AccessKey YOUR_ACCESS_KEY_HERE `
                  -SecretKey YOUR_SECRET_KEY_HERE `
                  -StoreAs default
-```
-
-3. Enable running unsigned scripts by typing the following in PowerShell:
-
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 ```
 
 4. Download the ENA driver from [here](https://s3.amazonaws.com/ec2-windows-drivers-downloads/ENA/Latest/AwsEnaNetworkDriver.zip) and install it by running the **install.ps1** file.

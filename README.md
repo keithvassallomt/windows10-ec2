@@ -98,7 +98,7 @@ aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-doc
 2. Create the AMI
 
 ```bash
-aws ec2 import-image --description "Windows 10" --disk-containers file://containers.json --region eu-central-1
+aws ec2 import-image --description "Windows 10" --disk-containers file://containers.json --role-name vmimport --region eu-central-1
 ```
 
 3. The above will take a while. You can use the following command to check for progress (it will show a progress indicator and eventually switch to **completed**).

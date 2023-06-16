@@ -140,10 +140,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 3. Create a profile called **default** containing your access key:
 
 ```powershell
-Set-AWSCredential `
-                 -AccessKey YOUR_ACCESS_KEY_HERE `
-                 -SecretKey YOUR_SECRET_KEY_HERE `
-                 -StoreAs default
+Set-AWSCredential -AccessKey YOUR_ACCESS_KEY_HERE -SecretKey YOUR_SECRET_KEY_HERE -StoreAs default
 ```
 
 4. Download the ENA driver from [here](https://s3.amazonaws.com/ec2-windows-drivers-downloads/ENA/Latest/AwsEnaNetworkDriver.zip) and install it by running the **install.ps1** file.
